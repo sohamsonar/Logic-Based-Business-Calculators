@@ -384,12 +384,7 @@
             // Calculate base total
             let totalPerPiece = size + topSheet + main_conditions()+ material;
 
-            // Apply conditions based on quantity
-            if (quantity < 1000) {
-                totalPerPiece = Math.max(totalPerPiece, totalPerPiece);  // Set minimum price of Rs. 3
-            } else if (quantity >= 1000 && quantity < 50000) {
-                totalPerPiece -= 0.05;  // Reduce 5 paise from total price per piece
-            }
+           
 
             let total = totalPerPiece * quantity;
 
@@ -407,7 +402,7 @@
             let weightText = document.getElementById('weight').options[document.getElementById('weight').selectedIndex].text;
             let absorptionText = document.getElementById('absorption').options[document.getElementById('absorption').selectedIndex].text;
             let materialText = document.getElementById('material').options[document.getElementById('material').selectedIndex].text;
-
+			let total=0;
             document.getElementById('selectedSize').textContent = "Size: " + sizeText;
             document.getElementById('selectedTopSheet').textContent = "Top Sheet: " + topSheetText;
             document.getElementById('selectedWeight').textContent = "Weight: " + weightText;
@@ -428,24 +423,34 @@
              let totalPerPiece = size + topSheet + material;
 
             // Apply conditions based on quantity
-            if (quantity < 1000) 
+            if(quantity<1000 && size=== 1.55)
 			{
-                totalPerPiece = Math.max(totalPerPiece, totalPerPiece);  // Set minimum price of Rs. 3
-            }
-			else if (quantity >= 1000 && quantity < 50000)
-			{
-                totalPerPiece -= 0.05;  
-            }
-			else if(quantity >= 50000 && quantity < 100000)
-			{
-				totalPerPiece -=0.10;
+				totalPerPiece=3;
+				total=totalPerPiece*quantity;
 			}
-			else if(quantity >= 100000 && quantity < 200000)
+			if(quantity<1000 && size===1.90)
 			{
-				totalPerPiece -=0.15;
+				totalPerPiece=4;
+				total=totalPerPiece*quantity;
+			}
+			if(quantity<1000 && size===2.70)
+			{
+				totalPerPiece=5;
+				total=totalPerPiece*quantity;
+			}
+			if(quantity>1000 && quantity<100000)
+			{
+				total = (totalPerPiece+main_conditions()) * quantity;
+				alert(totalPerPiece);
+			}
+			if(quantity>100000)
+			{
+				let semi_total = totalPerPiece - 0.10;
+				total=(semi_total+main_conditions()) * quantity;
+				
 			}
 			
-            let total = (totalPerPiece+main_conditions()) * quantity;
+            
 
             // Display the total amount
             document.getElementById('totalAmount').textContent = "Total Amount: Rs. " + total.toFixed(2);
