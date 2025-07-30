@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanitary Pad Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Product Details Container -->
+        <div class="product-details">
+            <h2>Selected Product Details</h2>
+            <img id="productImage" src="https://via.placeholder.com/300x300?text=No+Size+Selected" alt="Product Image" style="border-radius:10px;" height="300" width="300">
+            <p id="selectedSize">Size: Not selected</p>
+            <p id="selectedTopSheet">Top Sheet: Not selected</p>
+            <p id="selectedWeight">Weight: Not selected</p>
+            <p id="selectedAbsorption">Absorption: Not selected</p>
+            <p id="selectedMaterial">Material: Not selected</p>
+
+            <div class="total-amount" id="totalAmount">Total Amount: Rs. 0</div>
+            <div class="per-pad-price" id="perPadPrice">Price per pad: Rs. 0</div>
+        </div>
+
+        <!-- Calculator Container -->
+        <div class="container">
+            <center><h2>Total Amount Calculator</h2></center>
+
+            <!-- All Dropdowns -->
+            <div class="form-group">
+                <label for="size">Select Size:</label>
+                <select id="size" onchange="calculateTotal(); updateDetails(); updateImage(); main_conditions();">
+                    <option value="0">-- Select Size --</option>
+                    <option value="1.55">240 mm</option>
+                    <option value="1.90">280 mm</option>
+                    <option value="2.70">320 mm</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="top_sheet">Select Top Sheet Type:</label>
+                <select id="top_sheet" onchange="calculateTotal(); updateDetails();">
+                    <option value="0">-- Select Top Sheet --</option>
+                    <option value="0">Cotton(Non Woven)</option>
+                    <option value="0.40">Hot Air(Super Soft)</option>
+                    <option value="0.15">Mesh</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Select Weight:</label>
+                <select id="weight" onchange="calculateTotal(); updateDetails(); main_conditions();">
+                    <option value="0">-- Select Weight --</option>
+                    <option value="0" id="7gm">7 gm</option>
+                    <option value="0" id="8gm">8 gm</option>
+                    <option value="9gm" id="9gm">9 gm</option>
+                    <option value="10gm" id="10gm">10 gm</option>
+                    <option value="11gm" id="11gm">11 gm</option>
+                    <option value="12gm" id="12gm">12 gm</option>
+                    <option value="13gm" id="13gm">13 gm</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="absorption">Select Absorption Level:</label>
+                <select id="absorption" onchange="calculateTotal(); updateDetails(); main_conditions();">
+                    <option value="0">-- Select Absorption --</option>
+                    <option value="0" id="40ml">40 ml</option>
+                    <option value="50ml" id="50ml">50 ml</option>
+                    <option value="60ml" id="60ml">60 ml</option>
+                    <option value="70ml" id="70ml">70 ml</option>
+                    <option value="80ml" id="80ml">80 ml</option>
+                    <option value="100ml" id="100ml">100 ml</option>
+                    <option value="120ml" id="120ml">120 ml</option>
+                    <option value="150ml" id="150ml">150 ml</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="material">Select Material Type:</label>
+                <select id="material" onchange="calculateTotal(); updateDetails(); main_conditions();">
+                    <option value="0">-- Select Material --</option>
+                    <option value="0" id="str_fluffy">Straight fluffy</option>
+                    <option value="0.35" id="str_ultra">Straight Ultra/SAP paper</option>
+                    <option value="0.15" id="str_DN">Straight Dry Net</option>
+                    <option value="0" id="str_cotton">Straight Cotton</option>
+                    <option value="0.55" id="fold_cotton">Fold Cotton</option>
+                    <option value="1.25" id="fold_ultra">Fold Ultra/SAP paper</option>
+                    <option value="0.05" id="fold_DN">Fold Dry Net</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Enter Quantity:</label>
+                <input type="number" id="quantity" value="1" min="1">
+            </div>
+
+            <center><button class="calc" onclick="calculateTotal()">Calculate</button></center>
+
+            <center>
+                <h5><label>Call Us? </label><a href="tel:+91 88620 12411">+91 88620 12411</a><br><br></h5>
+                <h5><a href="mailto:purvamarketing123@gmail.com">mail us!</a></h5>
+            </center>
+        </div>
+    </div>
+
+    <center>
+        <footer>
+            <br>
+            <p><strong>Note:</strong> Prices may vary. Kindly discuss with our team before considering the final prices.</p>
+            <label>Call Us? </label><a href="tel:+91 88620 12411">+91 88620 12411</a><br><br>
+            <a href="mailto:purvamarketing123@gmail.com">mail us!</a>
+        </footer>
+    </center>
+
+    <script src="script.js"></script>
+</body>
+</html>
