@@ -1,1 +1,1 @@
-# sanitary_pad_bill_calculator
+# Business Invoice Calculator Using Logics And Conditions
