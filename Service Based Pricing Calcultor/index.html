@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Pricing Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Service Pricing Calculator</h1>
+
+    <label for="serviceType">Select Service Type:</label>
+    <select id="serviceType">
+        <option value="inshop">In-shop</option>
+        <option value="onsite">On-site</option>
+    </select>
+
+    <label for="rpm">Select RPM:</label>
+    <select id="rpm">
+        <option value="high">High (10000 RPM)</option>
+        <option value="medium">Medium (1500–2800 RPM)</option>
+        <option value="low">Low (220 RPM)</option>
+    </select>
+
+    <label for="weight">Enter Weight of Component (kg):</label>
+    <input type="number" id="weight" placeholder="Enter weight in kg">
+
+    <label for="jobCategory">Select Job Category:</label>
+    <select id="jobCategory">
+        <option value="blowerImpeller">Blower Impeller/Fan</option>
+        <option value="motorRotor">Motor Rotor</option>
+        <option value="roller">Roller</option>
+        <option value="spindle">Spindle</option>
+        <option value="fans">Fans</option>
+        <option value="agitatorsMixers">Agitators/Mixers</option>
+        <option value="grindingWheel">Grinding Wheel</option>
+        <option value="chuck">Chuck</option>
+        <option value="pulley">Pulley</option>
+        <option value="coupling">Coupling</option>
+        <option value="fixture">Fixture</option>
+        <option value="screwConveyor">Screw Conveyor</option>
+        <option value="bowl">Bowl</option>
+        <option value="flyer">Flyer</option>
+        <option value="gear">Gear</option>
+        <option value="flywheel">Flywheel</option>
+        <option value="brakeDrum">Brake Drum</option>
+        <option value="shotBlastingRotor">Shot Blasting Rotor</option>
+        <option value="turbine">Turbine</option>
+        <option value="centrifugalBasket">Centrifugal Basket</option>
+        <option value="crusher">Crusher</option>
+        <option value="separator">Separator</option>
+        <option value="coolingTowerFan">Cooling Tower Fan</option>
+        <option value="balancingMandrill">Balancing Mandrill</option>
+        <option value="pumpImpeller">Pump Impeller</option>
+    </select>
+
+    <label for="jobType">Select Job Type:</label>
+    <select id="jobType">
+        <!-- Will be dynamically filled -->
+    </select>
+
+    <button onclick="calculatePrice()">Calculate Price</button>
+
+    <div class="result" id="result"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
