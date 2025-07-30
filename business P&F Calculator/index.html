@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Business Profit and Loss Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Business Profit and Loss Calculator</h1>
+        <form id="calculator-form">
+            <!-- Business Name -->
+            <div class="input-group">
+                <label for="business-name">Business Name:</label>
+                <input type="text" id="business-name" placeholder="Enter your business name" required>
+            </div>
+            <div class="input-group">
+                <label for="user-name">Your Name:</label>
+                <input type="text" id="user-name" placeholder="Enter your name" required>
+            </div>
+            <div class="input-group">
+                <label for="user-city">City:</label>
+                <input type="text" id="user-city" placeholder="Enter your city" required>
+            </div>
+            <div class="input-group">
+                <label for="start-amount">Initial Investment Amount:</label>
+                <input type="number" id="start-amount" placeholder="Enter starting amount" required>
+            </div>
+            <div class="input-group">
+                <label for="business-start-year">Business Start Year:</label>
+                <input type="number" id="business-start-year" placeholder="Enter year business started" required>
+            </div>
+            <div class="input-group">
+                <label for="business-start-month">Business Start Month (Optional):</label>
+                <input type="number" id="business-start-month" placeholder="Enter month (1-12)">
+            </div>
+            <div class="input-group">
+                <label for="monthly-sales">Monthly Sales(Avg):</label>
+                <input type="number" id="monthly-sales" placeholder="Enter monthly sales" required>
+            </div>
+            <div class="input-group">
+                <label for="staff-salaries">Staff Salaries (per month):</label>
+                <input type="number" id="staff-salaries" placeholder="Enter staff salaries" required>
+            </div>
+            <div class="input-group">
+                <label for="other-expenses">Other Expenses (per month):</label>
+                <input type="number" id="other-expenses" placeholder="Enter other expenses" required>
+            </div>
+            <div class="input-group">
+                <label for="personal-expenses">Personal Expenses(Avg):</label>
+                <input type="number" id="personal-expenses" placeholder="Enter personal expenses" required>
+            </div>
+            <div class="input-group">
+                <label for="operating-expenses">Operating Expenses:</label>
+                <input type="number" id="operating-expenses" placeholder="Enter operating expenses" required>
+            </div>
+            <div class="input-group">
+                <label for="gross-margin">Gross Margin (%):</label>
+                <input type="number" id="gross-margin" placeholder="Enter gross margin percentage" required>
+            </div>
+            <div class="input-group">
+                <label for="taxes">Taxes:</label>
+                <input type="number" id="taxes" placeholder="Enter taxes" required>
+            </div>
+            <div class="input-group">
+                <label for="other-income">Other Income:</label>
+                <input type="number" id="other-income" placeholder="Enter other income" required>
+            </div>
+            <div class="button-group">
+                <button type="button" id="calculate-btn">Calculate</button>
+            </div>
+            <div id="results">
+                <h3>Results for <span id="business-name-result"></span></h3>
+                <p id="total-expenses">Total Monthly Expenses: ₹0</p>
+                <p id="gross-profit">Gross Profit: ₹0</p>
+                <p id="net-profit">Monthly Net Profit: ₹0</p>
+                <p id="estimated-bank-balance">Estimated Bank Balance: ₹0</p>
+                <p id="profit-since-start">Profit Since Start: ₹0</p>
+                <p id="monthly-profit">Monthly Profit: ₹0</p>
+            </div>
+        </form>
+    </div>
 
+    <!-- Pop-Up for Contact Details -->
+    <div id="contact-popup" class="popup">
+        <div class="popup-content">
+            <h2>Enter Your Contact Details</h2>
+            <label for="whatsapp">WhatsApp Number:</label>
+            <input type="text" id="whatsapp" placeholder="Enter your WhatsApp number" required><br>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" placeholder="Enter your email address" required>
+            <button id="submit-details-btn">Submit</button>
+            <button id="close-popup-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
